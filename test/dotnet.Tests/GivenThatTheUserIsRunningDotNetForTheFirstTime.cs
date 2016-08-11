@@ -64,7 +64,9 @@ Configuring...
 -------------------
 A command is running to initially populate your local package cache, to improve restore speed and enable offline access. This command will take up to a minute to complete and will only happen once.";
 
-            _firstDotnetVerbUseCommandResult.StdOut.Should().StartWith(firstTimeUseWelcomeMessage);
+            _firstDotnetVerbUseCommandResult.StdOut.Repalce("\r", "")
+                .Should()
+                .StartWith(firstTimeUseWelcomeMessage);
         }
 
     	[Fact]
